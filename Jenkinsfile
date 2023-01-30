@@ -7,7 +7,7 @@ node {
     }
     stage("Docker build"){
         sh 'docker version'
-        sh 'docker build -t jhooq-docker-demo .'
+        sh 'docker build -t rja-boot-app .'
         sh 'docker image list'
         sh 'docker tag rja-boot-app rajesh1218/rja-boot-app:latest'
     }
