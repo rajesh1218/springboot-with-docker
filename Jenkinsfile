@@ -17,4 +17,12 @@ node {
     stage("Push Image to Docker Hub"){
         sh 'docker push rajesh1218/rja-boot-app:latest'
     }
+    stage("SSH Into k8s Server") {
+        def remote = [:]
+        remote.name = 'K8S master'
+        remote.host = '192.168.56.111'
+        remote.user = 'vagrant'
+        remote.password = 'vagrant'
+        remote.allowAnyHosts = true
+    }
 }
